@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crochês da Gabs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo Crochês da Gabs" />
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="https://www.instagram.com/crochezin_s?igsh=eXY1YzUxZjZmZTlj" target="_blank">Instagram</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Bem-vindo</h1>
+            <p>Feito à mão e com carinho para você 💕</p>
+            <a href="#produtos" class="btn">Ver Produtos</a>
+        </div>
+    </section>
+    <section id="informacoes" class="informacoes">
+        <div class="container">
+            <h2>Informações</h2>
+    
+            <div class="info-box">
+                <h3>O Crochê é uma Arte</h3>
+                <p>O crochê vai além de uma técnica, é uma arte que representa peças diferentes, com personalidade e história. 
+                   Se mesclou com as tradições indígenas e africanas, criando uma identidade única no Brasil. 
+                   Essa arte foi passada de geração em geração, se tornando parte da nossa cultura. 
+                   Hoje, o crochê tem mil formas de se expressar, mas o que move minha criatividade é a ideia de proporcionar às pessoas 
+                   a chance de se sentirem únicas, com peças que têm alma. Além de ser sustentável e feito à mão, cada peça carrega um pedaço 
+                   de história e dedicação. 💖</p>
+            </div>
+    
+            <div class="info-box">
+                <h3>Cuidados com as Peças</h3>
+                <ul>
+                    <li>🫧 Lave sempre à mão com sabão neutro, de leve, sem esfregar muito. Use água fria ou morna.</li>
+                    <li>🚫 Nada de torcer! Apenas aperte com uma toalha para tirar o excesso de água.</li>
+                    <li>☁️ Deixe secar deitadinha na sombra para não perder o formato.</li>
+                    <li>🔥 Ferro? Melhor não! Mas, se precisar, use apenas o vapor, e de longe!</li>
+                    <li>📦 Guarde num local bem arejado e longe de objetos que possam puxar o fio.</li>
+                </ul>
+            </div>
+    
+            <div class="info-box">
+                <h3>Entregas e Pagamentos</h3>
+                <p>🚆 <strong>Entregas São Paulo</strong><br>
+                   R$5,00 taxa — Entrega em qualquer estação de trem ou metrô. 🤎</p>
+    
+                <p>📍 <strong>Entregas Mogi</strong><br>
+                   R$5,00 taxa — Entregas na UMC ou estações Estudantes, Mogi das Cruzes.<br>
+                   🚖 Uber Flash disponível (custo por conta do cliente).</p>
+    
+                <p>💰 <strong>Pagamentos e Encomendas</strong><br>
+                   🔹 Todos os pedidos exigem um sinal de 50% (compra de material).<br>
+                   🔹 Encomendas feitas na semana são entregues aos sábados e domingos.<br>
+                   🔹 Ou às sextas à noite na região de Mogi.</p>
+    
+                <p>🎁 <strong>Embalagem especial</strong><br>
+                   Cada peça é embalada com muito cuidado e carinho. 💝</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="produtos" class="produtos">
+        <h2 class="section-title">Produtos</h2>
+        <div id="todos-produtos" class="grid-container">
+            
+            <div class="produto">
+                <img src="bolsa.png" alt="Bolsa de Crochê" />
+                <h3>Bolsa de Crochê</h3>
+                <p>R$ 25,00</p>
+                <label for="cor">Escolha a cor:</label>
+                <input type="text" id="cor" placeholder="Digite a cor desejada">
+                <label for="cintura">Cintura (cm):</label>
+                <input type="number" id="cintura" placeholder="Ex: 70">
+
+                <label for="busto">Busto (cm):</label>
+                <input type="number" id="busto" placeholder="Ex: 90">
+
+                <label for="costas">Costas (cm):</label>
+                <input type="number" id="costas" placeholder="Ex: 40">
+                <label for="estacao">Escolha a estação de entrega:</label>
+                <select id="estacao">
+                    <option value="Luz">Luz</option>
+                    <option value="Brás">Brás</option>
+                    <option value="Tatuapé">Tatuapé</option>
+                    <option value="Itaquera">Itaquera</option>
+                    <option value="Dom Bosco">Dom Bosco</option>
+                    <option value="José Bonifácio">José Bonifácio</option>
+                    <option value="Guaianases">Guaianases</option>
+                    <option value="Antonio Gianetti Neto">Antonio Gianetti Neto</option>
+                    <option value="Ferraz de Vasconcelos">Ferraz de Vasconcelos</option>
+                    <option value="Poá">Poá</option>
+                    <option value="Calmon Viana">Calmon Viana</option>
+                    <option value="Suzano">Suzano</option>
+                    <option value="Jundiapeba">Jundiapeba</option>
+                    <option value="Braz Cubas">Braz Cubas</option>
+                    <option value="Mogi das Cruzes">Mogi das Cruzes</option>
+                    <option value="Estudantes">Estudantes</option>
+                </select>
+
+                <button onclick="enviarPedido()">Fazer pedido</button>
+            </div>
+                   
+            <div class="produto">
+                <img src="bolsa.png" alt="Bolsa de Crochê" />
+                <h3>Bolsa de Crochê</h3>
+                <p>R$ 25,00</p>
+                <label for="cor">Escolha a cor:</label>
+                <input type="text" id="cor" placeholder="Digite a cor desejada">
+                <label for="cintura">Cintura (cm):</label>
+                <input type="number" id="cintura" placeholder="Ex: 70">
+        
+                <label for="busto">Busto (cm):</label>
+                <input type="number" id="busto" placeholder="Ex: 90">
+        
+                <label for="costas">Costas (cm):</label>
+                <input type="number" id="costas" placeholder="Ex: 40">
+                <label for="estacao">Escolha a estação de entrega:</label>
+                <select id="estacao">
+                    <option value="Luz">Luz</option>
+                    <option value="Brás">Brás</option>
+                    <option value="Tatuapé">Tatuapé</option>
+                    <option value="Itaquera">Itaquera</option>
+                    <option value="Dom Bosco">Dom Bosco</option>
+                    <option value="José Bonifácio">José Bonifácio</option>
+                    <option value="Guaianases">Guaianases</option>
+                    <option value="Antonio Gianetti Neto">Antonio Gianetti Neto</option>
+                    <option value="Ferraz de Vasconcelos">Ferraz de Vasconcelos</option>
+                    <option value="Poá">Poá</option>
+                    <option value="Calmon Viana">Calmon Viana</option>
+                    <option value="Suzano">Suzano</option>
+                    <option value="Jundiapeba">Jundiapeba</option>
+                    <option value="Braz Cubas">Braz Cubas</option>
+                    <option value="Mogi das Cruzes">Mogi das Cruzes</option>
+                    <option value="Estudantes">Estudantes</option>
+                </select>
+        
+                <button onclick="enviarPedido()">Fazer pedido</button>
+            </div>
+
+            <div class="produto">
+                <img src="bolsa.png" alt="Bolsa de Crochê" />
+                <h3>Bolsa de Crochê</h3>
+                <p>R$ 25,00</p>
+                <label for="cor">Escolha a cor:</label>
+                <input type="text" id="cor" placeholder="Digite a cor desejada">
+                <label for="cintura">Cintura (cm):</label>
+                <input type="number" id="cintura" placeholder="Ex: 70">
+
+                <label for="busto">Busto (cm):</label>
+                <input type="number" id="busto" placeholder="Ex: 90">
+
+                <label for="costas">Costas (cm):</label>
+                <input type="number" id="costas" placeholder="Ex: 40">
+                <label for="estacao">Escolha a estação de entrega:</label>
+                <select id="estacao">
+                    <option value="Luz">Luz</option>
+                    <option value="Brás">Brás</option>
+                    <option value="Tatuapé">Tatuapé</option>
+                    <option value="Itaquera">Itaquera</option>
+                    <option value="Dom Bosco">Dom Bosco</option>
+                    <option value="José Bonifácio">José Bonifácio</option>
+                    <option value="Guaianases">Guaianases</option>
+                    <option value="Antonio Gianetti Neto">Antonio Gianetti Neto</option>
+                    <option value="Ferraz de Vasconcelos">Ferraz de Vasconcelos</option>
+                    <option value="Poá">Poá</option>
+                    <option value="Calmon Viana">Calmon Viana</option>
+                    <option value="Suzano">Suzano</option>
+                    <option value="Jundiapeba">Jundiapeba</option>
+                    <option value="Braz Cubas">Braz Cubas</option>
+                    <option value="Mogi das Cruzes">Mogi das Cruzes</option>
+                    <option value="Estudantes">Estudantes</option>
+                </select>
+
+                <button onclick="enviarPedido()">Fazer pedido</button>
+            </div>
+            <div class="produto">
+                <img src="bolsa.png" alt="Bolsa de Crochê" />
+                <h3>Bolsa de Crochê</h3>
+                <p>R$ 25,00</p>
+                <label for="cor">Escolha a cor:</label>
+                <input type="text" id="cor" placeholder="Digite a cor desejada">
+                <label for="cintura">Cintura (cm):</label>
+                <input type="number" id="cintura" placeholder="Ex: 70">
+
+                <label for="busto">Busto (cm):</label>
+                <input type="number" id="busto" placeholder="Ex: 90">
+
+                <label for="costas">Costas (cm):</label>
+                <input type="number" id="costas" placeholder="Ex: 40">
+                <label for="estacao">Escolha a estação de entrega:</label>
+                <select id="estacao">
+                    <option value="Luz">Luz</option>
+                    <option value="Brás">Brás</option>
+                    <option value="Tatuapé">Tatuapé</option>
+                    <option value="Itaquera">Itaquera</option>
+                    <option value="Dom Bosco">Dom Bosco</option>
+                    <option value="José Bonifácio">José Bonifácio</option>
+                    <option value="Guaianases">Guaianases</option>
+                    <option value="Antonio Gianetti Neto">Antonio Gianetti Neto</option>
+                    <option value="Ferraz de Vasconcelos">Ferraz de Vasconcelos</option>
+                    <option value="Poá">Poá</option>
+                    <option value="Calmon Viana">Calmon Viana</option>
+                    <option value="Suzano">Suzano</option>
+                    <option value="Jundiapeba">Jundiapeba</option>
+                    <option value="Braz Cubas">Braz Cubas</option>
+                    <option value="Mogi das Cruzes">Mogi das Cruzes</option>
+                    <option value="Estudantes">Estudantes</option>
+                </select>
+
+                <button onclick="enviarPedido()">Fazer pedido</button>
+            </div>
+            <div class="produto">
+                <img src="bolsa.png" alt="Bolsa de Crochê" />
+                <h3>Bolsa de Crochê</h3>
+                <p>R$ 25,00</p>
+                <label for="cor">Escolha a cor:</label>
+                <input type="text" id="cor" placeholder="Digite a cor desejada">
+                <label for="cintura">Cintura (cm):</label>
+                <input type="number" id="cintura" placeholder="Ex: 70">
+
+                <label for="busto">Busto (cm):</label>
+                <input type="number" id="busto" placeholder="Ex: 90">
+
+                <label for="costas">Costas (cm):</label>
+                <input type="number" id="costas" placeholder="Ex: 40">
+                <label for="estacao">Escolha a estação de entrega:</label>
+                <select id="estacao">
+                    <option value="Luz">Luz</option>
+                    <option value="Brás">Brás</option>
+                    <option value="Tatuapé">Tatuapé</option>
+                    <option value="Itaquera">Itaquera</option>
+                    <option value="Dom Bosco">Dom Bosco</option>
+                    <option value="José Bonifácio">José Bonifácio</option>
+                    <option value="Guaianases">Guaianases</option>
+                    <option value="Antonio Gianetti Neto">Antonio Gianetti Neto</option>
+                    <option value="Ferraz de Vasconcelos">Ferraz de Vasconcelos</option>
+                    <option value="Poá">Poá</option>
+                    <option value="Calmon Viana">Calmon Viana</option>
+                    <option value="Suzano">Suzano</option>
+                    <option value="Jundiapeba">Jundiapeba</option>
+                    <option value="Braz Cubas">Braz Cubas</option>
+                    <option value="Mogi das Cruzes">Mogi das Cruzes</option>
+                    <option value="Estudantes">Estudantes</option>
+                </select>
+
+                <button onclick="enviarPedido()">Fazer pedido</button>
+            </div>
+            <div class="produto">
+                <img src="bolsa.png" alt="Bolsa de Crochê" />
+                <h3>Bolsa de Crochê</h3>
+                <p>R$ 25,00</p>
+                <label for="cor">Escolha a cor:</label>
+                <input type="text" id="cor" placeholder="Digite a cor desejada">
+                <label for="cintura">Cintura (cm):</label>
+                <input type="number" id="cintura" placeholder="Ex: 70">
+
+                <label for="busto">Busto (cm):</label>
+                <input type="number" id="busto" placeholder="Ex: 90">
+
+                <label for="costas">Costas (cm):</label>
+                <input type="number" id="costas" placeholder="Ex: 40">
+                <label for="estacao">Escolha a estação de entrega:</label>
+                <select id="estacao">
+                    <option value="Luz">Luz</option>
+                    <option value="Brás">Brás</option>
+                    <option value="Tatuapé">Tatuapé</option>
+                    <option value="Itaquera">Itaquera</option>
+                    <option value="Dom Bosco">Dom Bosco</option>
+                    <option value="José Bonifácio">José Bonifácio</option>
+                    <option value="Guaianases">Guaianases</option>
+                    <option value="Antonio Gianetti Neto">Antonio Gianetti Neto</option>
+                    <option value="Ferraz de Vasconcelos">Ferraz de Vasconcelos</option>
+                    <option value="Poá">Poá</option>
+                    <option value="Calmon Viana">Calmon Viana</option>
+                    <option value="Suzano">Suzano</option>
+                    <option value="Jundiapeba">Jundiapeba</option>
+                    <option value="Braz Cubas">Braz Cubas</option>
+                    <option value="Mogi das Cruzes">Mogi das Cruzes</option>
+                    <option value="Estudantes">Estudantes</option>
+                </select>
+
+                <button onclick="enviarPedido()">Fazer pedido</button>
+            </div>
+
+            <!-- (sem medidas) -->
+            <div class="produto">
+                <img src="bone.png" alt="Boné de Crochê" />
+                <h3>Boné de Crochê</h3>
+                <p>R$ 30,00</p>
+                <label for="cor">Escolha a cor:</label>
+                <input type="text" id="cor">
+                <button onclick="enviarPedido()">Fazer pedido</button>
+            </div>
+            
+            <div class="produto">
+                <img src="cachecol.png" alt="Cachecol de Crochê" />
+                <h3>Cachecol de Crochê</h3>
+                <p>R$ 40,00</p>
+                <label for="cor">Escolha a cor:</label>
+                <input type="text" id="cor">
+                <button onclick="enviarPedido()">Fazer pedido</button>
+            </div>
+            
+            <div class="produto">
+                <img src="tapete.png" alt="Tapete de Crochê" />
+                <h3>Tapete de Crochê</h3>
+                <p>R$ 50,00</p>
+                <label for="cor">Escolha a cor:</label>
+                <input type="text" id="cor">
+                <button onclick="enviarPedido()">Fazer pedido</button>
+            </div>
+            
+            <div class="produto">
+                <img src="toalha.png" alt="Toalha de Crochê" />
+                <h3>Toalha de Crochê</h3>
+                <p>R$ 35,00</p>
+                <label for="cor">Escolha a cor:</label>
+                <input type="text" id="cor">
+                <button onclick="enviarPedido()">Fazer pedido</button>
+            </div>
+            <div class="produto">
+                <img src="toalha.png" alt="Toalha de Crochê" />
+                <h3>Toalha de Crochê</h3>
+                <p>R$ 35,00</p>
+                <label for="cor">Escolha a cor:</label>
+                <input type="text" id="cor">
+                <button onclick="enviarPedido()">Fazer pedido</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Crochês da Gabs. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
