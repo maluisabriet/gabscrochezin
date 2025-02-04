@@ -5,24 +5,29 @@ function adicionarAoPedido(event) {
     // Encontrar o produto mais próximo ao botão clicado
     const produtoDiv = event.target.closest('.produto');
 
-    const nomeProduto = produtoDiv.querySelector("h3").innerText;
+    const nomeProduto = produtoDiv.querySelector("h2").innerText;
     const preco = produtoDiv.querySelector("p").innerText;
     const cor = produtoDiv.querySelector("input[type='text']").value.trim();
-    const cinturaInput = produtoDiv.querySelector("input[placeholder='Ex: 70']");
+    const peitoralInput = produtoDiv.querySelector("input[placeholder='Ex: 70']");
     const bustoInput = produtoDiv.querySelector("input[placeholder='Ex: 90']");
-    const costasInput = produtoDiv.querySelector("input[placeholder='Ex: 40']");
+    const embaixopeitoInput = produtoDiv.querySelector("input[placeholder='Ex: 40']");
     const estacaoSelect = produtoDiv.querySelector("select");
 
     // Capturar valores das medidas
-    const cintura = cinturaInput ? cinturaInput.value.trim() : "";
+    const peitoral = peitoralInput ? peitoralInput.value.trim() : "";
     const busto = bustoInput ? bustoInput.value.trim() : "";
-    const costas = costasInput ? costasInput.value.trim() : "";
+    const embaixopeito = embaixopeitoInput ? embaixopeitoInput.value.trim() : "";
     const estacao = estacaoSelect ? estacaoSelect.value : "";
 
     // Verificar se todos os campos obrigatórios foram preenchidos
-    if (cor === "" || (cinturaInput && cintura === "") || 
-        (bustoInput && busto === "") || (costasInput && costas === "") || estacao === "") {
+    if (cor === "" || estacao === "") {
         alert("Por favor, preencha todos os campos antes de adicionar ao pedido!");
+        return;
+    }
+
+    // Verificar se os campos de medidas estão preenchidos quando existirem
+    if ((peitoralInput && peitoral === "") || (bustoInput && busto === "") || (embaixopeitoInput && embaixopeito === "")) {
+        alert("Por favor, preencha todas as medidas para o produto!");
         return;
     }
 
@@ -31,9 +36,9 @@ function adicionarAoPedido(event) {
         produto: nomeProduto,
         preco: preco,
         cor: cor,
-        cintura: cinturaInput ? cintura : "Não informado",
-        busto: bustoInput ? busto : "Não informado",
-        costas: costasInput ? costas : "Não informado",
+        peitoral: peitoral || "Não informado",
+        busto: busto || "Não informado",
+        embaixopeito: embaixopeito || "Não informado",
         estacao: estacao
     };
 
@@ -45,9 +50,9 @@ function adicionarAoPedido(event) {
 
     // Limpar os campos após adicionar o pedido
     produtoDiv.querySelector("input[type='text']").value = "";
-    if (cinturaInput) cinturaInput.value = "";
+    if (peitoralInput) peitoralInput.value = "";
     if (bustoInput) bustoInput.value = "";
-    if (costasInput) costasInput.value = "";
+    if (embaixopeitoInput) embaixopeitoInput.value = "";
     if (estacaoSelect) estacaoSelect.value = "";
 }
 
@@ -57,20 +62,20 @@ function finalizarPedido() {
         return;
     }
 
-    let mensagem = `*Oiee Gabs ! Tá por aí ? Gostaria de fazer um pedido:*\n\n`;
+    let mensagem = `*Oiee Gabs! Tá por aí? Gostaria de fazer um pedido:*\n\n`;
 
     pedidos.forEach((pedido, index) => {
         mensagem += `*Item ${index + 1}:* ${pedido.produto}\n`;
         mensagem += `*Preço:* ${pedido.preco}\n`;
         mensagem += `*Cor:* ${pedido.cor}\n`;
-        if (pedido.cintura !== "Não informado") mensagem += `*Cintura:* ${pedido.cintura} cm\n`;
+        if (pedido.peitoral !== "Não informado") mensagem += `*Peitoral:* ${pedido.peitoral} cm\n`;
         if (pedido.busto !== "Não informado") mensagem += `*Busto:* ${pedido.busto} cm\n`;
-        if (pedido.costas !== "Não informado") mensagem += `*Costas:* ${pedido.costas} cm\n`;
+        if (pedido.embaixopeito !== "Não informado") mensagem += `*Embaixo do peito:* ${pedido.embaixopeito} cm\n`;
         mensagem += `*Estação de entrega:* ${pedido.estacao}\n`;
         mensagem += `-----------------------------\n`;
     });
 
-    mensagem += `\nAguardando confirmação de pedido. Obrigado !`;
+    mensagem += `\nAguardando confirmação de pedido. Obrigado!`;
 
     // Substituir espaços por %20 para a URL do WhatsApp
     const mensagemFormatada = encodeURIComponent(mensagem);
@@ -83,10 +88,19 @@ function finalizarPedido() {
     pedidos = [];
 }
 
-// Adicionar eventos para todos os botões "Adicionar ao Pedido"
+// Função para enviar o pedido
+function enviarPedido() {
+    // Impede o evento de ser registrado múltiplas vezes
+    if (!event.target.hasAttribute("data-processed")) {
+        event.target.setAttribute("data-processed", "true");
+        adicionarAoPedido(event);
+    }
+}
+
+// Adicionar eventos para todos os botões "Fazer pedido"
 document.querySelectorAll(".produto button").forEach(button => {
-    button.innerText = "Adicionar ao Pedido"; // Alterar o texto do botão
-    button.addEventListener("click", adicionarAoPedido);
+    button.innerText = "Fazer pedido"; // Alterar o texto do botão
+    button.addEventListener("click", enviarPedido);
 });
 
 // Criar botão "Finalizar Pedido"
@@ -97,4 +111,5 @@ finalizarBtn.addEventListener("click", finalizarPedido);
 
 // Adicionar o botão ao final da seção de produtos
 document.querySelector(".produtos").appendChild(finalizarBtn);
+
 

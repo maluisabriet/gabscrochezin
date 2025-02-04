@@ -111,6 +111,7 @@ nav a {
 .produto img {
     width: 100%;
     border-radius: 10px;
+    
 }
 
 /* Input e select do produto */
@@ -124,7 +125,7 @@ nav a {
 }
 
 .form-container button {
-    background-color: #ff69b4;
+    background-color: #556B2F;
     color: white;
     border: none;
     padding: 12px 20px;
@@ -134,12 +135,12 @@ nav a {
 }
 
 .form-container button:hover {
-    background-color: #d957a1;
+    background-color: #556B2F;
 }
 
 /* Botão de compra */
 button {
-    background-color: #ff69b4;
+    background-color: #556B2F;
     color: white;
     border: none;
     padding: 10px;
@@ -147,10 +148,11 @@ button {
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    margin-top: 15px;
 }
 
 button:hover {
-    background-color: #d957a1;
+    background-color: #6B8E23;
 }
 
 /* Botão de Finalizar Pedido */
