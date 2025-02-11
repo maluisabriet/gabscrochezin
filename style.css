@@ -115,13 +115,18 @@ nav a {
 }
 
 /* Input e select do produto */
-.produto select,
-.produto input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.produto input,
+.produto select {
+    width: 100%; /* Ajuste conforme necessário */
+    height: 20px; /* Aumenta a altura dos inputs */
+    font-size: 14px; /* Aumenta o tamanho do texto */
+    text-align: center; /* Centraliza o texto dentro dos inputs */
 }
 
 .form-container button {
@@ -281,3 +286,4 @@ footer {
         padding: 60px 20px; /* Menos padding na seção hero */
     }
 }
+

@@ -15,7 +15,6 @@
             <nav>
                 <ul>
                     <li><a href="#home">Início</a></li>
-                    <li><a href="#produtos">Produtos</a></li>
                     <li><a href="https://www.instagram.com/crochezin_s?igsh=eXY1YzUxZjZmZTlj" target="_blank">Instagram</a></li>
                 </ul>
             </nav>
@@ -57,11 +56,13 @@
             <div class="info-box">
                 <h3>Entregas e Pagamentos</h3>
                 <p>🚆 <strong>Entregas São Paulo</strong><br>
-                   R$5,00 taxa — Entrega em qualquer estação de trem ou metrô. 🤎</p>
+                   R$5,00 taxa — Entrega em qualquer estação de trem, até sentido Brás.<br>
+                   R$10,00 taxa — Para as demais estações após o Brás. 🤎</p>
     
                 <p>📍 <strong>Entregas Mogi</strong><br>
-                   R$5,00 taxa — Entregas na UMC ou estações Estudantes, Mogi das Cruzes.<br>
-                   🚖 Uber Flash disponível (custo por conta do cliente).</p>
+                   R$5,00 taxa — Entrega nas estações Estudantes ou Mogi das Cruzes.<br>
+                   🚖 Uber Flash disponível (custo por conta do cliente).<br>
+                   🚨 Entrega grátis para alunos da UMC, no período da noite, durante o horário das aulas.</p>
     
                 <p>💰 <strong>Pagamentos e Encomendas</strong><br>
                    🔹 Todos os pedidos exigem um sinal de 50% (compra de material).<br>
@@ -80,19 +81,20 @@
             
             <div class="produto">
                 <img src="topfaixa.png" alt="Bolsa de Crochê" />
-                <h2>Top faixa</h2>
+                <h2>Top Faixa</h2>
                 <p>A partir de R$ 30,00</p>
                 <label for="cor">Escolha a cor:</label>
                 <input type="text" id="cor" placeholder="Digite a cor desejada">
+                <h3>Medidas</h3>
                 <label for="peitoral">Peitoral (cm):</label>
                 <input type="number" id="peitoral" placeholder="Ex: 70">
 
                 <label for="busto">Busto (cm):</label>
                 <input type="number" id="busto" placeholder="Ex: 90">
 
-                <label for="embaixopeito">Embaixo do peito (cm):</label>
-                <input type="number" id="embaixopeito" placeholder="Ex: 40">
-                <p>Meça busto, peitoral e embaixo do peito com a fita métrica sem apertar. Se não tiver, use um fio ou cardaço e depois meça com uma régua</p>
+                <label for="cintura">Cintura (cm):</label>
+                <input type="number" id="cintura" placeholder="Ex: 40">
+                <p style="font-size: 12px;">Meça busto, peitoral e cintura com a fita métrica sem apertar. Se não tiver, use um fio ou cardaço e depois meça com uma régua.</p>
                 <label for="estacao">Escolha a estação de entrega:</label>
                 <select id="estacao">
                     <option value="Luz">Luz</option>
@@ -113,24 +115,25 @@
                     <option value="Estudantes">Estudantes</option>
                 </select>
 
-                <button onclick="enviarPedido()">Fazer pedido</button>
+                <button onclick="enviarPedido()">Adicionar pedido</button>
             </div>
                    
             <div class="produto">
                 <img src="topfaixalistras.png" alt="Bolsa de Crochê" />
-                <h2>Top faixa listras</h2>
+                <h2>Top Faixa Listras</h2>
                 <p>A partir de R$ 35,00</p>
                 <label for="cor">Escolha as cores:</label>
                 <input type="text" id="cor" placeholder="Digite a cor desejada">
+                <h3>Medidas</h3>
                 <label for="peitoral">Peitoral (cm):</label>
                 <input type="number" id="peitoral" placeholder="Ex: 70">
 
                 <label for="busto">Busto (cm):</label>
                 <input type="number" id="busto" placeholder="Ex: 90">
 
-                <label for="embaixopeito">Embaixo do peito (cm):</label>
-                <input type="number" id="embaixopeito" placeholder="Ex: 40">
-                <p>Meça busto, peitoral e embaixo do peito com a fita métrica sem apertar. Se não tiver, use um fio ou cardaço e depois meça com uma régua</p>
+                <label for="cintura">Cintura (cm):</label>
+                <input type="number" id="cintura" placeholder="Ex: 40">
+                <p style="font-size: 12px;">Meça busto, peitoral e cintura com a fita métrica sem apertar. Se não tiver, use um fio ou cardaço e depois meça com uma régua.</p>
                 <label for="estacao">Escolha a estação de entrega:</label>
                 <select id="estacao">
                     <option value="Luz">Luz</option>
@@ -151,24 +154,25 @@
                     <option value="Estudantes">Estudantes</option>
                 </select>
         
-                <button onclick="enviarPedido()">Fazer pedido</button>
+                <button onclick="enviarPedido()">Adicionar pedido</button>
             </div>
 
             <div class="produto">
                 <img src="topmulticolor.png" alt="Bolsa de Crochê" />
-                <h2>Cropped top faixa multicolor</h3>
+                <h2>Cropped Top Faixa Multicolor</h3>
                 <p>A partir de R$ 35,00</p>
                 <label for="cor">Escolha as cores:</label>
                 <input type="text" id="cor" placeholder="Digite a cor desejada">
+                <h3>Medidas</h3>
                 <label for="peitoral">Peitoral (cm):</label>
                 <input type="number" id="peitoral" placeholder="Ex: 70">
 
                 <label for="busto">Busto (cm):</label>
                 <input type="number" id="busto" placeholder="Ex: 90">
 
-                <label for="embaixopeito">Embaixo do peito (cm):</label>
-                <input type="number" id="embaixopeito" placeholder="Ex: 40">
-                <p>Meça busto, peitoral e embaixo do peito com a fita métrica sem apertar. Se não tiver, use um fio ou cardaço e depois meça com uma régua</p>
+                <label for="cintura">Cintura (cm):</label>
+                <input type="number" id="cintura" placeholder="Ex: 40">
+                <p style="font-size: 12px;">Meça busto, peitoral e cintura com a fita métrica sem apertar. Se não tiver, use um fio ou cardaço e depois meça com uma régua.</p>
                 <label for="estacao">Escolha a estação de entrega:</label>
                 <select id="estacao">
                     <option value="Luz">Luz</option>
@@ -189,12 +193,91 @@
                     <option value="Estudantes">Estudantes</option>
                 </select>
 
-                <button onclick="enviarPedido()">Fazer pedido</button>
+                <button onclick="enviarPedido()">Adicionar pedido</button>
             </div>
             <div class="produto">
                 <img src="biquini.png" alt="Bolsa de Crochê" />
-                <h2>Conjunto biquíni</h2>
+                <h2>Conjunto Biquíni</h2>
                 <p>A partir de R$ 35,00</p>
+                <label for="cor">Escolha a cor:</label>
+                <input type="text" id="cor" placeholder="Digite a cor desejada">
+                <h3>Medidas</h3>
+                <label for="peitoral">Peitoral (cm):</label>
+                <input type="number" id="peitoral" placeholder="Ex: 70">
+
+                <label for="busto">Busto (cm):</label>
+                <input type="number" id="busto" placeholder="Ex: 90">
+
+                <label for="cintura">Cintura (cm):</label>
+                <input type="number" id="cintura" placeholder="Ex: 40">
+                <p style="font-size: 12px;">Meça busto, peitoral e cintura com a fita métrica sem apertar. Se não tiver, use um fio ou cardaço e depois meça com uma régua.</p>
+                <label for="estacao">Escolha a estação de entrega:</label>
+                <select id="estacao">
+                    <option value="Luz">Luz</option>
+                    <option value="Brás">Brás</option>
+                    <option value="Tatuapé">Tatuapé</option>
+                    <option value="Itaquera">Itaquera</option>
+                    <option value="Dom Bosco">Dom Bosco</option>
+                    <option value="José Bonifácio">José Bonifácio</option>
+                    <option value="Guaianases">Guaianases</option>
+                    <option value="Antonio Gianetti Neto">Antonio Gianetti Neto</option>
+                    <option value="Ferraz de Vasconcelos">Ferraz de Vasconcelos</option>
+                    <option value="Poá">Poá</option>
+                    <option value="Calmon Viana">Calmon Viana</option>
+                    <option value="Suzano">Suzano</option>
+                    <option value="Jundiapeba">Jundiapeba</option>
+                    <option value="Braz Cubas">Braz Cubas</option>
+                    <option value="Mogi das Cruzes">Mogi das Cruzes</option>
+                    <option value="Estudantes">Estudantes</option>
+                </select>
+
+                <button onclick="enviarPedido()">Adicionar pedido</button>
+            </div>
+            <div class="produto">
+                <img src="biquini2cores.png" alt="Bolsa de Crochê" />
+                <h2>Conjunto Biquíni 2 Cores</h2>
+                <p>A partir de R$ 35,00</p>
+                <label for="cor">Escolha as cores:</label>
+                <input type="text" id="cor" placeholder="Digite a cor desejada">
+                <h3>Medidas</h3>
+                <label for="peitoral">Peitoral (cm):</label>
+                <input type="number" id="peitoral" placeholder="Ex: 70">
+
+                <label for="busto">Busto (cm):</label>
+                <input type="number" id="busto" placeholder="Ex: 90">
+
+                <label for="cintura">Cintura (cm):</label>
+                <input type="number" id="cintura" placeholder="Ex: 40">
+                <p style="font-size: 12px;">Meça busto, peitoral e cintura com a fita métrica sem apertar. Se não tiver, use um fio ou cardaço e depois meça com uma régua.</p>
+                <label for="estacao">Escolha a estação de entrega:</label>
+                <select id="estacao">
+                    <option value="Luz">Luz</option>
+                    <option value="Brás">Brás</option>
+                    <option value="Tatuapé">Tatuapé</option>
+                    <option value="Itaquera">Itaquera</option>
+                    <option value="Dom Bosco">Dom Bosco</option>
+                    <option value="José Bonifácio">José Bonifácio</option>
+                    <option value="Guaianases">Guaianases</option>
+                    <option value="Antonio Gianetti Neto">Antonio Gianetti Neto</option>
+                    <option value="Ferraz de Vasconcelos">Ferraz de Vasconcelos</option>
+                    <option value="Poá">Poá</option>
+                    <option value="Calmon Viana">Calmon Viana</option>
+                    <option value="Suzano">Suzano</option>
+                    <option value="Jundiapeba">Jundiapeba</option>
+                    <option value="Braz Cubas">Braz Cubas</option>
+                    <option value="Mogi das Cruzes">Mogi das Cruzes</option>
+                    <option value="Estudantes">Estudantes</option>
+                </select>
+
+                <button onclick="enviarPedido()">Adicionar pedido</button>
+            </div>
+    
+            <div class="produto">
+                <img src="fotogabs.png" alt="Bolsa de Crochê" />
+                <h2>Personalização</h2>
+                <p>Faça seu orçamento</p>
+                <p>Esse é o seu espaço para personalizar do jeitinho que quiser !
+                    Teve uma ideia ? Preencha os dados abaixo e, ao fazer o pedido, me envie a foto da sua referência 😉</p>
                 <label for="cor">Escolha a cor:</label>
                 <input type="text" id="cor" placeholder="Digite a cor desejada">
                 <label for="peitoral">Peitoral (cm):</label>
@@ -203,9 +286,9 @@
                 <label for="busto">Busto (cm):</label>
                 <input type="number" id="busto" placeholder="Ex: 90">
 
-                <label for="embaixopeito">Embaixo do peito (cm):</label>
-                <input type="number" id="embaixopeito" placeholder="Ex: 40">
-                <p>Meça busto, peitoral e embaixo do peito com a fita métrica sem apertar. Se não tiver, use um fio ou cardaço e depois meça com uma régua</p>
+                <label for="cintura">Cintura (cm):</label>
+                <input type="number" id="cintura" placeholder="Ex: 40">
+                <p style="font-size: 12px;">Meça busto, peitoral e cintura com a fita métrica sem apertar. Se não tiver, use um fio ou cardaço e depois meça com uma régua.</p>
                 <label for="estacao">Escolha a estação de entrega:</label>
                 <select id="estacao">
                     <option value="Luz">Luz</option>
@@ -226,85 +309,124 @@
                     <option value="Estudantes">Estudantes</option>
                 </select>
 
-                <button onclick="enviarPedido()">Fazer pedido</button>
-            </div>
-            <div class="produto">
-                <img src="biquini2cores.png" alt="Bolsa de Crochê" />
-                <h2>Conjunto biquíni 2 cores</h2>
-                <p>A partir de R$ 35,00</p>
-                <label for="cor">Escolha as cores:</label>
-                <input type="text" id="cor" placeholder="Digite a cor desejada">
-                <label for="peitoral">Peitoral (cm):</label>
-                <input type="number" id="peitoral" placeholder="Ex: 70">
-
-                <label for="busto">Busto (cm):</label>
-                <input type="number" id="busto" placeholder="Ex: 90">
-
-                <label for="embaixopeito">Embaixo do peito (cm):</label>
-                <input type="number" id="embaixopeito" placeholder="Ex: 40">
-                <p>Meça busto, peitoral e embaixo do peito com a fita métrica sem apertar. Se não tiver, use um fio ou cardaço e depois meça com uma régua.</p>
-                <label for="estacao">Escolha a estação de entrega:</label>
-                <select id="estacao">
-                    <option value="Luz">Luz</option>
-                    <option value="Brás">Brás</option>
-                    <option value="Tatuapé">Tatuapé</option>
-                    <option value="Itaquera">Itaquera</option>
-                    <option value="Dom Bosco">Dom Bosco</option>
-                    <option value="José Bonifácio">José Bonifácio</option>
-                    <option value="Guaianases">Guaianases</option>
-                    <option value="Antonio Gianetti Neto">Antonio Gianetti Neto</option>
-                    <option value="Ferraz de Vasconcelos">Ferraz de Vasconcelos</option>
-                    <option value="Poá">Poá</option>
-                    <option value="Calmon Viana">Calmon Viana</option>
-                    <option value="Suzano">Suzano</option>
-                    <option value="Jundiapeba">Jundiapeba</option>
-                    <option value="Braz Cubas">Braz Cubas</option>
-                    <option value="Mogi das Cruzes">Mogi das Cruzes</option>
-                    <option value="Estudantes">Estudantes</option>
-                </select>
-
-                <button onclick="enviarPedido()">Fazer pedido</button>
+                <button onclick="enviarPedido()">Adicionar pedido</button>
             </div>
 
             <!-- (sem medidas) -->
             <div class="produto">
                 <img src="ecobag.png" alt="Boné de Crochê" />
-                <h2>Ecobag de crochê</h2>
-                <p>Perfeita para aquele rolêzinho 😉</p>
+                <h2>Ecobag de Crochê</h2>
                 <p>R$ 35,00</p>
+                <p>Perfeita para aquele rolêzinho 😉</p>
                 <label for="cor">Escolha a cor:</label>
                 <input type="text" id="cor">
-                <button onclick="enviarPedido()">Fazer pedido</button>
+                <label for="estacao">Escolha a estação de entrega:</label>
+                <select id="estacao">
+                    <option value="Luz">Luz</option>
+                    <option value="Brás">Brás</option>
+                    <option value="Tatuapé">Tatuapé</option>
+                    <option value="Itaquera">Itaquera</option>
+                    <option value="Dom Bosco">Dom Bosco</option>
+                    <option value="José Bonifácio">José Bonifácio</option>
+                    <option value="Guaianases">Guaianases</option>
+                    <option value="Antonio Gianetti Neto">Antonio Gianetti Neto</option>
+                    <option value="Ferraz de Vasconcelos">Ferraz de Vasconcelos</option>
+                    <option value="Poá">Poá</option>
+                    <option value="Calmon Viana">Calmon Viana</option>
+                    <option value="Suzano">Suzano</option>
+                    <option value="Jundiapeba">Jundiapeba</option>
+                    <option value="Braz Cubas">Braz Cubas</option>
+                    <option value="Mogi das Cruzes">Mogi das Cruzes</option>
+                    <option value="Estudantes">Estudantes</option>
+                </select>
+                <button onclick="enviarPedido()">Adicionar pedido</button>
             </div>
             
             <div class="produto">
                 <img src="bolsaombro.png" alt="Cachecol de Crochê" />
-                <h2>Bolsa ombrinho/alça</h2>
                 <p>R$ 35,00</p>
+                <h2>Bolsa Ombrinho</h2>
                 <p>Ótima para complementar qualquer look ✨</p>
                 <label for="cor">Escolha a cor:</label>
                 <input type="text" id="cor">
-                <button onclick="enviarPedido()">Fazer pedido</button>
+                <label for="estacao">Escolha a estação de entrega:</label>
+                <select id="estacao">
+                    <option value="Luz">Luz</option>
+                    <option value="Brás">Brás</option>
+                    <option value="Tatuapé">Tatuapé</option>
+                    <option value="Itaquera">Itaquera</option>
+                    <option value="Dom Bosco">Dom Bosco</option>
+                    <option value="José Bonifácio">José Bonifácio</option>
+                    <option value="Guaianases">Guaianases</option>
+                    <option value="Antonio Gianetti Neto">Antonio Gianetti Neto</option>
+                    <option value="Ferraz de Vasconcelos">Ferraz de Vasconcelos</option>
+                    <option value="Poá">Poá</option>
+                    <option value="Calmon Viana">Calmon Viana</option>
+                    <option value="Suzano">Suzano</option>
+                    <option value="Jundiapeba">Jundiapeba</option>
+                    <option value="Braz Cubas">Braz Cubas</option>
+                    <option value="Mogi das Cruzes">Mogi das Cruzes</option>
+                    <option value="Estudantes">Estudantes</option>
+                </select>
+                <button onclick="enviarPedido()">Adicionar pedido</button>
             </div>
             
             <div class="produto">
                 <img src="bolsabag.png" alt="Tapete de Crochê" />
-                <h3>Bolsas Bags de Rolêzinho</h3>
+                <h3>Bolsa Bag de Rolêzinho</h3>
                 <p>R$ 35,00</p>
                 <p>Estilo e funcionalidade para o seu dia a dia ☀️</p>
                 <label for="cor">Escolha a cor:</label>
                 <input type="text" id="cor">
-                <button onclick="enviarPedido()">Fazer pedido</button>
+                <label for="estacao">Escolha a estação de entrega:</label>
+                <select id="estacao">
+                    <option value="Luz">Luz</option>
+                    <option value="Brás">Brás</option>
+                    <option value="Tatuapé">Tatuapé</option>
+                    <option value="Itaquera">Itaquera</option>
+                    <option value="Dom Bosco">Dom Bosco</option>
+                    <option value="José Bonifácio">José Bonifácio</option>
+                    <option value="Guaianases">Guaianases</option>
+                    <option value="Antonio Gianetti Neto">Antonio Gianetti Neto</option>
+                    <option value="Ferraz de Vasconcelos">Ferraz de Vasconcelos</option>
+                    <option value="Poá">Poá</option>
+                    <option value="Calmon Viana">Calmon Viana</option>
+                    <option value="Suzano">Suzano</option>
+                    <option value="Jundiapeba">Jundiapeba</option>
+                    <option value="Braz Cubas">Braz Cubas</option>
+                    <option value="Mogi das Cruzes">Mogi das Cruzes</option>
+                    <option value="Estudantes">Estudantes</option>
+                </select>
+                <button onclick="enviarPedido()">Adicionar pedido</button>
             </div>
             
             <div class="produto">
                 <img src="portagarrafa.png" alt="Toalha de Crochê" />
-                <h2>Porta garrafas com alça</h2>
+                <h2>Porta Garrafas com Alça</h2>
                 <p>R$ 20,00</p>
                 <p>Praticidade para levar sua garrafa sempre com você 😊</p>
                 <label for="cor">Escolha a cor:</label>
                 <input type="text" id="cor">
-                <button onclick="enviarPedido()">Fazer pedido</button>
+                <label for="estacao">Escolha a estação de entrega:</label>
+                <select id="estacao">
+                    <option value="Luz">Luz</option>
+                    <option value="Brás">Brás</option>
+                    <option value="Tatuapé">Tatuapé</option>
+                    <option value="Itaquera">Itaquera</option>
+                    <option value="Dom Bosco">Dom Bosco</option>
+                    <option value="José Bonifácio">José Bonifácio</option>
+                    <option value="Guaianases">Guaianases</option>
+                    <option value="Antonio Gianetti Neto">Antonio Gianetti Neto</option>
+                    <option value="Ferraz de Vasconcelos">Ferraz de Vasconcelos</option>
+                    <option value="Poá">Poá</option>
+                    <option value="Calmon Viana">Calmon Viana</option>
+                    <option value="Suzano">Suzano</option>
+                    <option value="Jundiapeba">Jundiapeba</option>
+                    <option value="Braz Cubas">Braz Cubas</option>
+                    <option value="Mogi das Cruzes">Mogi das Cruzes</option>
+                    <option value="Estudantes">Estudantes</option>
+                </select>
+                <button onclick="enviarPedido()">Adicionar pedido</button>
             </div>
             <div class="produto">
                 <img src="capanot.png" alt="Toalha de Crochê" />
@@ -313,7 +435,26 @@
                 <p>Leve-o com segurança e elegância para onde quiser 🤎</p>
                 <label for="cor">Escolha a cor:</label>
                 <input type="text" id="cor">
-                <button onclick="enviarPedido()">Fazer pedido</button>
+                <label for="estacao">Escolha a estação de entrega:</label>
+                <select id="estacao">
+                    <option value="Luz">Luz</option>
+                    <option value="Brás">Brás</option>
+                    <option value="Tatuapé">Tatuapé</option>
+                    <option value="Itaquera">Itaquera</option>
+                    <option value="Dom Bosco">Dom Bosco</option>
+                    <option value="José Bonifácio">José Bonifácio</option>
+                    <option value="Guaianases">Guaianases</option>
+                    <option value="Antonio Gianetti Neto">Antonio Gianetti Neto</option>
+                    <option value="Ferraz de Vasconcelos">Ferraz de Vasconcelos</option>
+                    <option value="Poá">Poá</option>
+                    <option value="Calmon Viana">Calmon Viana</option>
+                    <option value="Suzano">Suzano</option>
+                    <option value="Jundiapeba">Jundiapeba</option>
+                    <option value="Braz Cubas">Braz Cubas</option>
+                    <option value="Mogi das Cruzes">Mogi das Cruzes</option>
+                    <option value="Estudantes">Estudantes</option>
+                </select>
+                <button onclick="enviarPedido()">Adicionar pedido</button>
             </div>
             <div class="produto">
                 <img src="capaisqueiro.png" alt="Toalha de Crochê" />
@@ -322,8 +463,28 @@
                 <p>Mantenha o seu isqueiro sempre à mão com segurança 🔥</p>
                 <label for="cor">Escolha a cor:</label>
                 <input type="text" id="cor">
-                <button onclick="enviarPedido()">Fazer pedido</button>
+                <label for="estacao">Escolha a estação de entrega:</label>
+                <select id="estacao">
+                    <option value="Luz">Luz</option>
+                    <option value="Brás">Brás</option>
+                    <option value="Tatuapé">Tatuapé</option>
+                    <option value="Itaquera">Itaquera</option>
+                    <option value="Dom Bosco">Dom Bosco</option>
+                    <option value="José Bonifácio">José Bonifácio</option>
+                    <option value="Guaianases">Guaianases</option>
+                    <option value="Antonio Gianetti Neto">Antonio Gianetti Neto</option>
+                    <option value="Ferraz de Vasconcelos">Ferraz de Vasconcelos</option>
+                    <option value="Poá">Poá</option>
+                    <option value="Calmon Viana">Calmon Viana</option>
+                    <option value="Suzano">Suzano</option>
+                    <option value="Jundiapeba">Jundiapeba</option>
+                    <option value="Braz Cubas">Braz Cubas</option>
+                    <option value="Mogi das Cruzes">Mogi das Cruzes</option>
+                    <option value="Estudantes">Estudantes</option>
+                </select>
+                <button onclick="enviarPedido()">Adicionar pedido</button>
             </div>
+    
         </div>
     </section>
 

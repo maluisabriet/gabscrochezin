@@ -7,16 +7,16 @@ function adicionarAoPedido(event) {
 
     const nomeProduto = produtoDiv.querySelector("h2").innerText;
     const preco = produtoDiv.querySelector("p").innerText;
-    const cor = produtoDiv.querySelector("input[type='text']").value.trim();
-    const peitoralInput = produtoDiv.querySelector("input[placeholder='Ex: 70']");
-    const bustoInput = produtoDiv.querySelector("input[placeholder='Ex: 90']");
-    const embaixopeitoInput = produtoDiv.querySelector("input[placeholder='Ex: 40']");
+    const corInput = produtoDiv.querySelector("input[type='text']");
+    const peitoralInput = produtoDiv.querySelector("input[id='peitoral']");
+    const bustoInput = produtoDiv.querySelector("input[id='busto']");
+    const cinturaInput = produtoDiv.querySelector("input[id='cintura']");
     const estacaoSelect = produtoDiv.querySelector("select");
 
-    // Capturar valores das medidas
-    const peitoral = peitoralInput ? peitoralInput.value.trim() : "";
-    const busto = bustoInput ? bustoInput.value.trim() : "";
-    const embaixopeito = embaixopeitoInput ? embaixopeitoInput.value.trim() : "";
+    const cor = corInput ? corInput.value.trim() : "";
+    const peitoral = peitoralInput ? peitoralInput.value.trim() || "Não informado" : "Não informado";
+    const busto = bustoInput ? bustoInput.value.trim() || "Não informado" : "Não informado";
+    const cintura = cinturaInput ? cinturaInput.value.trim() || "Não informado" : "Não informado";
     const estacao = estacaoSelect ? estacaoSelect.value : "";
 
     // Verificar se todos os campos obrigatórios foram preenchidos
@@ -25,34 +25,28 @@ function adicionarAoPedido(event) {
         return;
     }
 
-    // Verificar se os campos de medidas estão preenchidos quando existirem
-    if ((peitoralInput && peitoral === "") || (bustoInput && busto === "") || (embaixopeitoInput && embaixopeito === "")) {
-        alert("Por favor, preencha todas as medidas para o produto!");
-        return;
-    }
-
     // Criar um objeto com os detalhes do pedido
     const pedido = {
         produto: nomeProduto,
         preco: preco,
         cor: cor,
-        peitoral: peitoral || "Não informado",
-        busto: busto || "Não informado",
-        embaixopeito: embaixopeito || "Não informado",
+        peitoral: peitoral,
+        busto: busto,
+        cintura: cintura,
         estacao: estacao
     };
 
     // Adicionar pedido à lista
     pedidos.push(pedido);
 
-    // Exibir mensagem de sucesso
-    alert(`✅ ${nomeProduto} foi adicionado ao pedido!`);
+    // Exibir mensagem personalizada
+    alert(`${nomeProduto} foi adicionado ao pedido!`);
 
     // Limpar os campos após adicionar o pedido
-    produtoDiv.querySelector("input[type='text']").value = "";
+    if (corInput) corInput.value = "";
     if (peitoralInput) peitoralInput.value = "";
     if (bustoInput) bustoInput.value = "";
-    if (embaixopeitoInput) embaixopeitoInput.value = "";
+    if (cinturaInput) cinturaInput.value = "";
     if (estacaoSelect) estacaoSelect.value = "";
 }
 
@@ -62,23 +56,48 @@ function finalizarPedido() {
         return;
     }
 
-    let mensagem = `*Oiee Gabs! Tá por aí? Gostaria de fazer um pedido:*\n\n`;
+    let mensagemFinal = "";
+    let temPersonalizado = false;
+    let temNormal = false;
 
     pedidos.forEach((pedido, index) => {
-        mensagem += `*Item ${index + 1}:* ${pedido.produto}\n`;
-        mensagem += `*Preço:* ${pedido.preco}\n`;
-        mensagem += `*Cor:* ${pedido.cor}\n`;
-        if (pedido.peitoral !== "Não informado") mensagem += `*Peitoral:* ${pedido.peitoral} cm\n`;
-        if (pedido.busto !== "Não informado") mensagem += `*Busto:* ${pedido.busto} cm\n`;
-        if (pedido.embaixopeito !== "Não informado") mensagem += `*Embaixo do peito:* ${pedido.embaixopeito} cm\n`;
-        mensagem += `*Estação de entrega:* ${pedido.estacao}\n`;
-        mensagem += `-----------------------------\n`;
+        if (pedido.produto.includes("Personalização")) {
+            if (!temPersonalizado) {
+                mensagemFinal += "Oiee Gabs! Tenho um pedido personalizado para você. Dá uma olhadinha:\n\n";
+                temPersonalizado = true;
+            }
+            mensagemFinal += `Item ${index + 1}: ${pedido.produto}\n`;
+            mensagemFinal += `Cor: ${pedido.cor}\n`;
+            if (pedido.peitoral !== "Não informado") mensagemFinal += `Peitoral: ${pedido.peitoral} cm\n`;
+            if (pedido.busto !== "Não informado") mensagemFinal += `Busto: ${pedido.busto} cm\n`;
+            if (pedido.cintura !== "Não informado") mensagemFinal += `Cintura: ${pedido.cintura} cm\n`;
+            mensagemFinal += `Estação de entrega: ${pedido.estacao}\n`;
+            mensagemFinal += `-----------------------------\n`;
+        } else {
+            if (!temNormal) {
+                mensagemFinal += "Oiee Gabs! Tá por aí? Gostaria de fazer um pedido:\n\n";
+                temNormal = true;
+            }
+            mensagemFinal += `Item ${index + 1}: ${pedido.produto}\n`;
+            mensagemFinal += `Preço: ${pedido.preco}\n`;
+            mensagemFinal += `Cor: ${pedido.cor}\n`;
+            if (pedido.peitoral !== "Não informado") mensagemFinal += `Peitoral: ${pedido.peitoral} cm\n`;
+            if (pedido.busto !== "Não informado") mensagemFinal += `Busto: ${pedido.busto} cm\n`;
+            if (pedido.cintura !== "Não informado") mensagemFinal += `Cintura: ${pedido.cintura} cm\n`;
+            mensagemFinal += `Estação de entrega: ${pedido.estacao}\n`;
+            mensagemFinal += `-----------------------------\n`;
+        }
     });
 
-    mensagem += `\nAguardando confirmação de pedido. Obrigado!`;
+    mensagemFinal += "Aguardando confirmação de pedido. Obrigado!";
+
+    // Exibir alerta se houver personalização
+    if (temPersonalizado) {
+        alert("🚨 Não se esqueça de enviar a imagem de referência pelo WhatsApp após finalizar o pedido 🚨");
+    }
 
     // Substituir espaços por %20 para a URL do WhatsApp
-    const mensagemFormatada = encodeURIComponent(mensagem);
+    const mensagemFormatada = encodeURIComponent(mensagemFinal);
     const telefone = "5511949930186"; // Substitua pelo número correto
 
     // Abrir WhatsApp
@@ -89,17 +108,13 @@ function finalizarPedido() {
 }
 
 // Função para enviar o pedido
-function enviarPedido() {
-    // Impede o evento de ser registrado múltiplas vezes
-    if (!event.target.hasAttribute("data-processed")) {
-        event.target.setAttribute("data-processed", "true");
-        adicionarAoPedido(event);
-    }
+function enviarPedido(event) {
+    event.preventDefault();
+    adicionarAoPedido(event);
 }
 
 // Adicionar eventos para todos os botões "Fazer pedido"
 document.querySelectorAll(".produto button").forEach(button => {
-    button.innerText = "Fazer pedido"; // Alterar o texto do botão
     button.addEventListener("click", enviarPedido);
 });
 
@@ -111,5 +126,10 @@ finalizarBtn.addEventListener("click", finalizarPedido);
 
 // Adicionar o botão ao final da seção de produtos
 document.querySelector(".produtos").appendChild(finalizarBtn);
+
+
+
+
+
 
 
