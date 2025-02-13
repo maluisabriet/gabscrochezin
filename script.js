@@ -12,12 +12,18 @@ function adicionarAoPedido(event) {
     const bustoInput = produtoDiv.querySelector("input[id='busto']");
     const cinturaInput = produtoDiv.querySelector("input[id='cintura']");
     const estacaoSelect = produtoDiv.querySelector("select");
+    const outraEstacaoInput = produtoDiv.querySelector("input[id='outraEstacao']");
 
     const cor = corInput ? corInput.value.trim() : "";
     const peitoral = peitoralInput ? peitoralInput.value.trim() || "Não informado" : "Não informado";
     const busto = bustoInput ? bustoInput.value.trim() || "Não informado" : "Não informado";
     const cintura = cinturaInput ? cinturaInput.value.trim() || "Não informado" : "Não informado";
-    const estacao = estacaoSelect ? estacaoSelect.value : "";
+    let estacao = estacaoSelect ? estacaoSelect.value : "";
+
+    // Se a opção "Outro" for selecionada, usar o valor do campo de texto
+    if (estacao === "outro") {
+        estacao = outraEstacaoInput ? outraEstacaoInput.value.trim() : "";
+    }
 
     // Verificar se todos os campos obrigatórios foram preenchidos
     if (cor === "" || estacao === "") {
@@ -48,6 +54,8 @@ function adicionarAoPedido(event) {
     if (bustoInput) bustoInput.value = "";
     if (cinturaInput) cinturaInput.value = "";
     if (estacaoSelect) estacaoSelect.value = "";
+    if (outraEstacaoInput) outraEstacaoInput.style.display = "none";
+    if (outraEstacaoInput) outraEstacaoInput.value = "";
 }
 
 function finalizarPedido() {
@@ -66,27 +74,21 @@ function finalizarPedido() {
                 mensagemFinal += "Oiee Gabs! Tenho um pedido personalizado para você. Dá uma olhadinha:\n\n";
                 temPersonalizado = true;
             }
-            mensagemFinal += `Item ${index + 1}: ${pedido.produto}\n`;
-            mensagemFinal += `Cor: ${pedido.cor}\n`;
-            if (pedido.peitoral !== "Não informado") mensagemFinal += `Peitoral: ${pedido.peitoral} cm\n`;
-            if (pedido.busto !== "Não informado") mensagemFinal += `Busto: ${pedido.busto} cm\n`;
-            if (pedido.cintura !== "Não informado") mensagemFinal += `Cintura: ${pedido.cintura} cm\n`;
-            mensagemFinal += `Estação de entrega: ${pedido.estacao}\n`;
-            mensagemFinal += `-----------------------------\n`;
         } else {
             if (!temNormal) {
                 mensagemFinal += "Oiee Gabs! Tá por aí? Gostaria de fazer um pedido:\n\n";
                 temNormal = true;
             }
-            mensagemFinal += `Item ${index + 1}: ${pedido.produto}\n`;
-            mensagemFinal += `Preço: ${pedido.preco}\n`;
-            mensagemFinal += `Cor: ${pedido.cor}\n`;
-            if (pedido.peitoral !== "Não informado") mensagemFinal += `Peitoral: ${pedido.peitoral} cm\n`;
-            if (pedido.busto !== "Não informado") mensagemFinal += `Busto: ${pedido.busto} cm\n`;
-            if (pedido.cintura !== "Não informado") mensagemFinal += `Cintura: ${pedido.cintura} cm\n`;
-            mensagemFinal += `Estação de entrega: ${pedido.estacao}\n`;
-            mensagemFinal += `-----------------------------\n`;
         }
+
+        mensagemFinal += `Item ${index + 1}: ${pedido.produto}\n`;
+        mensagemFinal += `Preço: ${pedido.preco}\n`;
+        mensagemFinal += `Cor: ${pedido.cor}\n`;
+        if (pedido.peitoral !== "Não informado") mensagemFinal += `Peitoral: ${pedido.peitoral} cm\n`;
+        if (pedido.busto !== "Não informado") mensagemFinal += `Busto: ${pedido.busto} cm\n`;
+        if (pedido.cintura !== "Não informado") mensagemFinal += `Cintura: ${pedido.cintura} cm\n`;
+        mensagemFinal += `Estação de entrega: ${pedido.estacao}\n`;
+        mensagemFinal += `-----------------------------\n`;
     });
 
     mensagemFinal += "Aguardando confirmação de pedido. Obrigado!";
@@ -107,6 +109,18 @@ function finalizarPedido() {
     pedidos = [];
 }
 
+// Função para mostrar campo "Outra estação" quando necessário
+document.querySelectorAll(".produto select").forEach(select => {
+    select.addEventListener("change", function () {
+        const outraEstacaoInput = this.closest('.produto').querySelector("#outraEstacao");
+        if (this.value === "outro") {
+            outraEstacaoInput.style.display = "block";
+        } else {
+            outraEstacaoInput.style.display = "none";
+        }
+    });
+});
+
 // Função para enviar o pedido
 function enviarPedido(event) {
     event.preventDefault();
@@ -126,6 +140,7 @@ finalizarBtn.addEventListener("click", finalizarPedido);
 
 // Adicionar o botão ao final da seção de produtos
 document.querySelector(".produtos").appendChild(finalizarBtn);
+
 
 
 
