@@ -54,10 +54,13 @@ function adicionarAoPedido(event) {
     if (bustoInput) bustoInput.value = "";
     if (cinturaInput) cinturaInput.value = "";
     if (estacaoSelect) estacaoSelect.value = "";
-    if (outraEstacaoInput) outraEstacaoInput.style.display = "none";
-    if (outraEstacaoInput) outraEstacaoInput.value = "";
+    if (outraEstacaoInput) {
+        outraEstacaoInput.style.display = "none";
+        outraEstacaoInput.value = "";
+    }
 }
 
+// Função para finalizar o pedido
 function finalizarPedido() {
     if (pedidos.length === 0) {
         alert("Seu pedido está vazio! Adicione pelo menos um produto.");

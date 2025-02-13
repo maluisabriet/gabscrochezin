@@ -111,7 +111,6 @@ nav a {
 .produto img {
     width: 100%;
     border-radius: 10px;
-    
 }
 
 /* Input e select do produto */
@@ -129,18 +128,16 @@ nav a {
     text-align: center; /* Centraliza o texto dentro dos inputs */
 }
 
-.form-container button {
-    background-color: #556B2F;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.form-container button:hover {
-    background-color: #556B2F;
+/* Estilização do campo "Outra Estação" */
+#outraEstacao {
+    width: 100%; /* Garante que o campo ocupe toda a largura disponível */
+    height: 30px; /* Ajuste o tamanho do campo para garantir consistência */
+    font-size: 14px; /* Tamanho da fonte semelhante aos outros campos */
+    text-align: center; /* Centraliza o texto dentro do input */
+    padding: 5px; /* Adiciona algum preenchimento para tornar o campo mais acessível */
+    box-sizing: border-box; /* Garante que o padding não afete a largura total do input */
+    margin-top: 10px; /* Espaçamento superior para alinhamento adequado */
+    display: none; /* Escondido por padrão */
 }
 
 /* Botão de compra */
